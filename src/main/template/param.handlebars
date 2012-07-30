@@ -6,9 +6,9 @@
 			<input type="file" name='{{name}}'/>
 		{{else}}
 			{{#if defaultValue}}
-				<textarea class='body-textarea' name='{{name}}'>{{defaultValue}}</textarea>
+				<input minlength='0' name='{{name}}' placeholder='' type='text' value='{{defaultValue}}'/>
 			{{else}}
-			    <textarea class='body-textarea' name='{{name}}'></textarea>
+			    <input minlength='0' name='{{name}}' placeholder='' type='text' value=''/>
 			{{/if}}
 		{{/if}}
 	{{else}}
