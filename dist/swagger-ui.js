@@ -185,7 +185,8 @@ function program1(depth0,data) {
   stack1 = foundHelper || depth0.notes;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "notes", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "</p>\n                ";
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "</p>\n                ";
   return buffer;}
 
 function program3(depth0,data) {
