@@ -180,13 +180,13 @@ templates['operation'] = template(function (Handlebars,depth0,helpers,partials,d
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n                <h4>Implementation Notes</h4>\n                <p>";
+  buffer += "\n                <h4>Implementation Notes</h4>\n                <div id=\"notes\">";
   foundHelper = helpers.notes;
   stack1 = foundHelper || depth0.notes;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "notes", { hash: {} }); }
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "</p>\n                ";
+  buffer += "</div>\n                ";
   return buffer;}
 
 function program3(depth0,data) {
