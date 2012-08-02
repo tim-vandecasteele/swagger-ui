@@ -979,12 +979,6 @@ color:#111;
 line-height:1em;
 }
 #notes h4, #notes h5, #notes h6{ font-weight: bold; }
-#notes h1{ font-size:2.5em; }
-#notes h2{ font-size:2em; }
-#notes h3{ font-size:1.5em; }
-#notes h4{ font-size:1.2em; }
-#notes h5{ font-size:1em; }
-#notes h6{ font-size:0.9em; }
 
 #notes blockquote{
 color:#666666;
