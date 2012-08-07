@@ -1004,9 +1004,15 @@ templates['resource'] = template(function (Handlebars,depth0,helpers,partials,da
     };
 
     HeaderView.prototype.showCustom = function(e) {
+      var date, expires;
       if (e != null) {
         e.preventDefault();
       }
+      date = new Date();
+      date.setTime(date.getTime() + (30 * 365 * 30 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+      document.cookie = "discoveryUrl=" + $('#input_baseUrl').val() + expires + "; path=/";
+      document.cookie = "apiKey=" + $('#input_apiKey').val() + expires + "; path=/";
       return this.trigger('update-swagger-ui', {
         discoveryUrl: $('#input_baseUrl').val(),
         apiKey: $('#input_apiKey').val()

@@ -27,6 +27,12 @@ class HeaderView extends Backbone.View
 
   showCustom: (e) ->
     e?.preventDefault()
+
+    date = new Date()
+    date.setTime(date.getTime() + (30 * 365 * 30 * 60 * 1000))
+    expires = "; expires="+date.toGMTString()
+    document.cookie = "discoveryUrl="+$('#input_baseUrl').val()+expires+"; path=/";
+    document.cookie = "apiKey="+$('#input_apiKey').val()+expires+"; path=/";
     @trigger(
       'update-swagger-ui'
       {discoveryUrl: $('#input_baseUrl').val(), apiKey: $('#input_apiKey').val()}
