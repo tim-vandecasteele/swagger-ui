@@ -22,7 +22,7 @@ class OperationView extends Backbone.View
     paramView = new ParameterView({model: param, tagName: 'tr', readOnly: @model.isReadOnly})
     $('.operation-params', $(@el)).append paramView.render().el
 
-  
+
   submitOperation: ->
     # Check for errors
     form = $('.sandbox', $(@el))
@@ -50,18 +50,17 @@ class OperationView extends Backbone.View
 
         # add params
         for param in @model.parameters
-          if param.paramType is 'body'
+          if param.paramType is 'body' && map[param.name]
             bodyParam.append(param.name, map[param.name])
 
         # add files
         $.each $('input[type~="file"]'), (i, el) ->
           bodyParam.append($(el).attr('name'), el.files[0])
 
-        console.log(bodyParam)
       else
         bodyParam = null
         for param in @model.parameters
-          if param.paramType is 'body'
+          if param.paramType is 'body' && map[param.name]
             bodyParam = map[param.name]
 
       log "bodyParam = " + bodyParam

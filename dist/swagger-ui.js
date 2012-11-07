@@ -1186,20 +1186,19 @@ templates['resource'] = template(function (Handlebars,depth0,helpers,partials,da
           _ref1 = this.model.parameters;
           for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
             param = _ref1[_j];
-            if (param.paramType === 'body') {
+            if (param.paramType === 'body' && map[param.name]) {
               bodyParam.append(param.name, map[param.name]);
             }
           }
           $.each($('input[type~="file"]'), function(i, el) {
             return bodyParam.append($(el).attr('name'), el.files[0]);
           });
-          console.log(bodyParam);
         } else {
           bodyParam = null;
           _ref2 = this.model.parameters;
           for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
             param = _ref2[_k];
-            if (param.paramType === 'body') {
+            if (param.paramType === 'body' && map[param.name]) {
               bodyParam = map[param.name];
             }
           }
