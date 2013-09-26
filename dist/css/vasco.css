@@ -1,3 +1,31 @@
+body #header {
+  background-color: #005596;
+}
+  body #header a#logo {
+    display: inline-block;
+    padding: 0;
+    height: 24px;
+    width: 246px;
+    background-image: url(../images/vasco.png);
+    text-indent: -9999px;
+  }
+  body #header form#api_selector .input a#explore {
+    font-weight: normal;
+    color: #333;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+    body #header form#api_selector .input a:hover#explore,
+    body #header form#api_selector .input a:active#explore {
+      background: #E6E6E6;
+    }
+    body #header form#api_selector .input a:active#explore {
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
 /* Markdown support */
 #notes a{ color: #0645ad; text-decoration:none;}
 #notes a:visited{ color: #0b0080; }
